@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --cor-primaria: rgb(17, 231, 17);
+    --cor-secundaria: black;
+    --cor-terciaria: rgba(0, 0, 0, 0.822);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-terciaria)) no-repeat fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#principal {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    min-width: 500px;
+    align-items: center;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    justify-content: center;
+    padding: 20px;
+    background:var(--cor-terciaria);
+    border-radius: 15px;
+    border: 2px solid var(--cor-primaria);
+    box-shadow: 0 0 15px var(--cor-secundaria);
+}
+#texto {
+    margin: 20px 0;
+    background-image: linear-gradient(to bottom, var(--cor-primaria), var(--cor-secundaria) 200%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 30pt;
+    user-select: none;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+#input {
+    margin: 20px 0;
+    padding: 8px;
+    border-radius: 15px;
+    border: 2px solid rgb(68, 68, 68);
+    background: none;
+    font-size: 12pt;
+    color: white;
+    width: 400px;
+    transition: .7s;
+    outline: 0;
+}
+#input:focus {
+    border: 2px solid transparent;
+    border-radius: 0px;
+    border-right: 2px solid var(--cor-primaria);
+    border-left: 2px solid var(--cor-primaria);
+}
+
+@media (max-width: 600px) {
+    #principal {
+        min-width: 70vw;
+        max-width: 70vw;
+    }
+    #texto {
+        font-size: 18pt;
+        -webkit-line-clamp: 5;
+    }
+    #input {
+        width: 60vw;
+        font-size: 8pt;
+    }
+}
