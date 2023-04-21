@@ -5,6 +5,9 @@
     --cor-secundaria: black;
     --cor-terciaria: rgba(0, 0, 0, 0.822);
 }
+::placeholder {
+    user-select: none;
+}
 
 * {
     margin: 0;
@@ -12,7 +15,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 body {
-    background: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-terciaria)) no-repeat fixed;
+    background: linear-gradient(to bottom, var(--cor-terciaria), var(--cor-secundaria) 85%) no-repeat fixed;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -41,13 +44,21 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
-    font-size: 30pt;
+    
     user-select: none;
     word-break: break-word;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    transition: 1s;
+}
+.texto {
+    font-size: 30pt;
+}
+.titulo {
+    font-size: 60pt;
+    filter: drop-shadow(0 0 5px var(--cor-primaria));
 }
 #input {
     margin: 20px 0;
@@ -58,7 +69,7 @@ body {
     font-size: 12pt;
     color: white;
     width: 400px;
-    transition: .7s;
+    transition: .5s;
     outline: 0;
 }
 #input:focus {
@@ -68,17 +79,50 @@ body {
     border-left: 2px solid var(--cor-primaria);
 }
 
+/* RODAPÉ */
+.rodape {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    user-select: none;
+}
+.rodape h1 {
+    font-size: 9pt;
+    color: var(--cor-primaria);
+}
+.rodape h2 {
+    font-size: 9pt;
+    margin-top: -5px;
+    padding: 10px 0;
+    color: var(--cor-primaria);
+}
+.rodape h2>a {
+    text-decoration: none;
+    color: rgb(25, 100, 25);
+    transition: .5s;
+}
+.rodape h2>a:hover {
+    color: var(--cor-primaria);
+    text-shadow: 0 0 1px;
+}
+
 @media (max-width: 600px) {
     #principal {
         min-width: 70vw;
         max-width: 70vw;
     }
     #texto {
-        font-size: 18pt;
         -webkit-line-clamp: 5;
     }
     #input {
         width: 60vw;
-        font-size: 10pt;
+        font-size: 12pt;
+    }
+    .texto {
+        font-size: 22pt;
+    }
+    .titulo {
+        font-size: 45pt;
+        filter: drop-shadow(0 0 5px var(--cor-primaria));
     }
 }
